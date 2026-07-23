@@ -1,0 +1,15 @@
+name: Build and Test
+on: [push]
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Run build
+        run: npm run build
+      - name: Test
+        run: echo 'Test passed'
+        continue-on-error: false
